@@ -14,7 +14,11 @@
 <p align="center">
   <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/your-ai-agent-wants-to-talk-to-successfactors-start-with-the-security/ba-p/14469334"><img src="https://img.shields.io/badge/Blog-SAP%20Community-008FD3?style=for-the-badge&logo=sap&logoColor=white" alt="Blog" /></a>
   <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/your-ai-agent-wants-to-talk-to-successfactors-start-with-the-security/ba-p/14469334"><img src="https://img.shields.io/badge/SAP%20Community-Start%20with%20the%20Security-008FD3?style=for-the-badge&logo=sap&logoColor=white" alt="SAP Community" /></a>
-  <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/bg-p/artificial-intelligence-blog-posts"><img src="https://img.shields.io/badge/space-Artificial%20Intelligence-0A6ED1?style=for-the-badge" alt="AI blog posts" /></a>
+  <a href="https://community.sap.com/t5/artificial-intelligence/gh-p/ai"><img src="https://img.shields.io/badge/space-Artificial%20Intelligence-0A6ED1?style=for-the-badge" alt="Artificial Intelligence Space" /></a>
+</p>
+
+<p align="center">
+  <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/your-ai-agent-wants-to-talk-to-successfactors-start-with-the-security/ba-p/14469334">Your AI Agent Wants to Talk to SuccessFactors: Start with the Security</a>
 </p>
 
 Cursor plugin for [SuccessFactors MCP](https://github.com/nexageapps/mcp_tool_for_sfsf).
@@ -54,29 +58,35 @@ publish.
 
 ## Files
 
-
-| File                                | Role                |
-| ----------------------------------- | ------------------- |
-| `.cursor-plugin/plugin.json`        | Plugin manifest     |
-| `mcp.json`                          | Streamable HTTP MCP |
-| `skills/successfactors-hr/SKILL.md` | Agent guidance      |
-| `assets/cursor-plugin-logo.svg`     | Logo                |
-| `LICENSE`                           | MIT                 |
-
+| File | Role |
+| ---- | ---- |
+| `.cursor-plugin/plugin.json` | Plugin manifest |
+| `mcp.json` | Streamable HTTP MCP |
+| `skills/successfactors-hr/SKILL.md` | Agent guidance |
+| `assets/cursor-plugin-logo.svg` | Logo |
+| `LICENSE` | MIT |
 
 Server source, Joule artifacts, and Hugging Face deploy live in
 [nexageapps/mcp_tool_for_sfsf](https://github.com/nexageapps/mcp_tool_for_sfsf).
 
 ## Maintainers
 
-Refresh this repo from the product tree on a laptop as GitHub user  `nexageapps`. Cursor Cloud cannot push here (`cursor[bot]` gets HTTP 403).
+Refresh this repo from the product tree on a laptop as GitHub user
+`nexageapps`. Cursor Cloud cannot push here (`cursor[bot]` gets HTTP 403).
+
+Always delete `/tmp/sfsf-mcp` first (a leftover clone makes `git clone`
+fail and `cp` copy stale files). Pull `main` before you push (`! [rejected]
+main -> main (fetch first)` means GitHub already has commits you do not,
+often `.DS_Store`). `git add` without a new `git commit` does not push
+anything.
 
 ```bash
 cd ~/successfactors-mcp-cursor
+git pull origin main
 
-# pull latest plugin files from the product repo
+rm -rf /tmp/sfsf-mcp
 git clone -b cursor/cursor-mcp-config-c134 https://github.com/nexageapps/mcp_tool_for_sfsf.git /tmp/sfsf-mcp
-cp -R /tmp/sfsf-mcp/cursor-plugin/. .
+rsync -a --exclude .git /tmp/sfsf-mcp/cursor-plugin/ ./
 
 git status
 git add .

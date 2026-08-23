@@ -1,0 +1,23 @@
+{
+  "name": "successfactors-mcp",
+  "displayName": "SuccessFactors MCP",
+  "version": "1.0.0",
+  "description": "Query SAP SuccessFactors Employee Central from Cursor. The public listing uses the DEMOCO mock tenant over Streamable HTTP. No SuccessFactors password in chat.",
+  "author": {
+    "name": "SuccessFactors MCP contributors"
+  },
+  "homepage": "https://huggingface.co/spaces/HeisenbergLupenix/successfactors-mcp",
+  "repository": "https://github.com/nexageapps/successfactors-mcp-cursor",
+  "license": "MIT",
+  "keywords": [
+    "successfactors",
+    "sap",
+    "hcm",
+    "employee-central",
+    "mcp",
+    "hr"
+  ],
+  "logo": "assets/cursor-plugin-logo.svg",
+  "skills": ["skills/successfactors-hr"],
+  "mcpServers": "mcp.json"
+}

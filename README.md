@@ -1,11 +1,21 @@
-# SuccessFactors MCP
+<h1 align="center">nexageapps's SuccessFactors MCP (Demo)</h1>
 
-**Give your AI agent secure access to SAP SuccessFactors.**  
-Cursor plugin for the public DEMOCO demo. No SuccessFactors password in chat.
+<p align="center">
+  <strong>Give your AI agent secure access to SAP SuccessFactors.</strong><br />
+  Cursor plugin for the public DEMOCO demo. No SuccessFactors password in chat.
+</p>
 
-![Product repo](https://img.shields.io/badge/server-mcp_tool_for_sfsf-412991?style=flat-square)![Hugging Face](https://img.shields.io/badge/Hugging%20Face-DEMOCO%20Space-FFD21E?style=flat-square&logo=huggingface&logoColor=black)![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+<p align="center">
+  <a href="https://github.com/nexageapps/mcp_tool_for_sfsf"><img src="https://img.shields.io/badge/server-mcp_tool_for_sfsf-412991?style=flat-square" alt="Product repo" /></a>
+  <a href="https://huggingface.co/spaces/HeisenbergLupenix/successfactors-mcp"><img src="https://img.shields.io/badge/Hugging%20Face-DEMOCO%20Space-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License: MIT" /></a>
+</p>
 
-![Blog](https://img.shields.io/badge/Blog-SAP%20Community-008FD3?style=for-the-badge&logo=sap&logoColor=white)![SAP Community](https://img.shields.io/badge/SAP%20Community-Start%20with%20the%20Security-008FD3?style=for-the-badge&logo=sap&logoColor=white)![AI blog posts](https://img.shields.io/badge/space-Artificial%20Intelligence-0A6ED1?style=for-the-badge)
+<p align="center">
+  <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/your-ai-agent-wants-to-talk-to-successfactors-start-with-the-security/ba-p/14469334"><img src="https://img.shields.io/badge/Blog-SAP%20Community-008FD3?style=for-the-badge&logo=sap&logoColor=white" alt="Blog" /></a>
+  <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/your-ai-agent-wants-to-talk-to-successfactors-start-with-the-security/ba-p/14469334"><img src="https://img.shields.io/badge/SAP%20Community-Start%20with%20the%20Security-008FD3?style=for-the-badge&logo=sap&logoColor=white" alt="SAP Community" /></a>
+  <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/bg-p/artificial-intelligence-blog-posts"><img src="https://img.shields.io/badge/space-Artificial%20Intelligence-0A6ED1?style=for-the-badge" alt="AI blog posts" /></a>
+</p>
 
 Cursor plugin for [SuccessFactors MCP](https://github.com/nexageapps/mcp_tool_for_sfsf).
 Installs like Gmail or Calendar: **Customize** → enable `successfactors-mcp` →
@@ -62,13 +72,14 @@ Server source, Joule artifacts, and Hugging Face deploy live in
 Refresh this repo from the product tree on a laptop as GitHub user  `nexageapps`. Cursor Cloud cannot push here (`cursor[bot]` gets HTTP 403).
 
 ```bash
-cd ~
-git clone https://github.com/nexageapps/successfactors-mcp-cursor.git
-cd successfactors-mcp-cursor
+cd ~/successfactors-mcp-cursor
+
+# pull latest plugin files from the product repo
 git clone -b cursor/cursor-mcp-config-c134 https://github.com/nexageapps/mcp_tool_for_sfsf.git /tmp/sfsf-mcp
 cp -R /tmp/sfsf-mcp/cursor-plugin/. .
-git add .
+
 git status
+git add .
 git commit -m "docs: refresh Cursor plugin from product repo"
 git push origin main
 ```

@@ -1,6 +1,6 @@
 {
   "name": "successfactors-mcp",
-  "displayName": "SuccessFactors MCP",
+  "displayName": "nexageapps's SuccessFactors MCP (Demo)",
   "version": "1.0.0",
   "description": "Query SAP SuccessFactors Employee Central from Cursor. The public listing uses the DEMOCO mock tenant over Streamable HTTP. No SuccessFactors password in chat.",
   "author": {
